@@ -5,7 +5,7 @@
 person = {
   name: 'Ben',
   age: 25,
-  married: true,
+  married: true, 
 };
 
 person2 = Object.assign({}, person);
