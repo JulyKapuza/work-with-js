@@ -75,3 +75,25 @@ for (const iterator of array) {
        console.log(iterator)
    }
 }
+
+// Дан объект:
+
+let list = {
+
+name: "denis",
+
+work: "easycode",
+
+age: 29
+
+}
+
+// Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре. Использовать for in.
+
+for (const key in list) {
+    if (typeof(list[key]) === 'string') {
+        list[key] = list[key].toUpperCase()
+    }
+}
+
+console.log(list)
