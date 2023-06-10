@@ -80,7 +80,7 @@ let res1 = '';
 for (let i = 0; i < str1.length; i++) {
   if (i === 0 || str1[i - 1] === ' ') {
     res1 += str1[i].toUpperCase();
-  } else if (str1[i] !== ' '){
+  } else if (str1[i] !== ' ') {
     res1 += str1[i];
   }
 }
