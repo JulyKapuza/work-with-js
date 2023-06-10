@@ -5,19 +5,17 @@
 
 // multiply(1,2,3) => результат 6 (1*2*3);
 
-
-
 // Если нет ни одного аргумента, вернуть ноль: multiply() // 0
 
-function multiply(n) {
-    if(arguments.length ===0){
-        return 0
-    }
-    let res = 1;
-    for(let i =0; i< arguments.length; i++){
-        res*=arguments[i]
-    }
-    return res
+function multiply() {
+  if (!arguments.length) {
+    return 0;
+  }
+  let res = 1;
+  for (let i = 0; i < arguments.length; i++) {
+    res *= arguments[i];
+  }
+  return res;
 }
 
 multiply(2, 4, 5, 6);
@@ -35,21 +33,20 @@ multiply();
 // reverseString()// denifednu
 
 function reverseString(str) {
-    let string = String(str);
-     let result = ''
-    for (let i = string.length - 1; i >= 0; i--){
-        result += string[i]
-    }
-    return result
+  let string = String(str);
+  let result = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    result += string[i];
+  }
+  return result;
 }
 
-console.log(reverseString('test'))
-console.log(reverseString())
+console.log(reverseString('test'));
+console.log(reverseString());
 
 // reverseString(null) // llun
 // reverseString(undefined)// denifednu
 // reverseString()// denifednu
-
 
 // Создать функцию, которая в качестве аргумента может принять строку, числа, null или undefined
 // и возвращает строку, где каждый символ разделен пробелом и заменен на юникод - значение символа:
@@ -59,15 +56,15 @@ console.log(reverseString())
 // подсказка: в решении задачи вам помогут методы charCodeAt и trim
 
 function getCodeStringFromText(str) {
-    let newStr = String(str)
-    let text = ''
-    for (item of newStr) {
-        text +=' ' + item.charCodeAt()
-    }
-    return text.trim()
+  let newStr = String(str);
+  let text = '';
+  for (item of newStr) {
+    text += item.charCodeAt()+ ' ';
+  }
+  return text.trim();
 }
 
-console.log(getCodeStringFromText("hello"))
+console.log(getCodeStringFromText('hello'));
 
 // Создать функцию угадай число.
 
@@ -85,22 +82,19 @@ console.log(getCodeStringFromText("hello"))
 // Если переданно число в виде строки оно должно быть преобразованно к числу.
 
 function guessTheNumber(num) {
-   
-    if (num < 0 || num > 10) {
-    return new Error("Please provide number in range 0 - 10")
-    }
-    if (typeof num !== 'number') {
-     return new Error("Please provide a valid number")   
-    }
-    
-    let random = Math.round(Math.random() * (10 - 1) + 1)
-    if (num === random) {
-        return 'You win!'
-    } else {
-        return `You are lose, your number is ${num}, the random number is ${random}`
-    }
-    
+  if (num < 0 || num > 10) {
+    return new Error('Please provide number in range 0 - 10');
+  }
+  if (typeof num !== 'number') {
+    return new Error('Please provide a valid number');
+  }
+
+  let random = Math.round(Math.random() * (10 - 1) + 1);
+  if (num === random) {
+    return 'You win!';
+  } else {
+    return `You are lose, your number is ${num}, the random number is ${random}`;
+  }
 }
 
-
-console.log(guessTheNumber('dadadsad'))
+console.log(guessTheNumber(2));
