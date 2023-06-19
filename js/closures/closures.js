@@ -24,9 +24,18 @@ function minus(val) {
 console.log(minus(10)(6));
 console.log(minus(5)(6));
 
-Реализовать функцию, которая умножает и умеет запоминать возвращаемый результат между вызовами:
 
-function multiplyMaker ...
+// function minus(num1 = 0) {
+//   return function (num2 = 0) {
+//     return num1 - num2;
+//   }
+// }
+
+// console.log(minus(2)(1))
+
+// Реализовать функцию, которая умножает и умеет запоминать возвращаемый результат между вызовами:
+
+// function multiplyMaker ...
 
 const multiply = multiplyMaker(2);
 
@@ -46,6 +55,16 @@ function multiplyMaker(val) {
     return (x *= num);
   };
 }
+
+// function multiplyMaker(num1 = 2) {
+//   return function (num2 = 1) {
+//     return num1 *= num2;
+//   }
+// }
+
+// const multiply = multiplyMaker(2);
+// console.log(multiply(2))
+// console.log(multiply(2))
 // Реализовать модуль, который работает со строкой и имеет методы:
 
 // a. установить строку
@@ -113,7 +132,7 @@ console.log(workWithStr().getStrReverse());
 
 
 
-модуль.установитьЗначение(10).вСтепень(2).узнатьЗначение(); // 100
+// модуль.установитьЗначение(10).вСтепень(2).узнатьЗначение(); // 100
 
 const calculate = (function (){
   let num = 0;
