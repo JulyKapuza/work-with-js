@@ -4,49 +4,52 @@
 
 // ['red', 'blue', 'olive', 'orange', 'pink', 'yellow', 'green', 'gray', 'aqua', 'brown'];
 
-
-
 // 2. Возращаете фон обратно когда пользователь уводит мышку с блока.
 
 // 3. Добавление фона из первой части задания сделать с задержкой в 200мс. Т.е каждый последующий блок должен изменить свой фон за 200мс позже предыдущего. Например если первый блок поменял через 200мс то следующий должен поменять через 400 и т.д.
 
-// const colors = ['blueviolet', 'navy', 'cornflowerblue', 'blue', 'darkslateblue', 'deepskyblue', '	dodgerblue', 'skyblue', 'aqua', '	lightskyblue','deeppink']
+const colors = [
+  'blueviolet',
+  'navy',
+  'cornflowerblue',
+  'blue',
+  'darkslateblue',
+  'deepskyblue',
+  '	dodgerblue',
+  'skyblue',
+  'aqua',
+  '	lightskyblue',
+  'deeppink',
+];
 
-// let randomColor= ()=>colors[Math.floor(Math.random() * colors.length)]
+let randomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
+const container = document.querySelector('.container');
+const box = document.querySelector('.box');
 
-// const container = document.querySelector('.container')
-// const box = document.querySelector('.box')
+box.addEventListener('mouseenter', callback, { capture: true });
+container.addEventListener('mouseleave', callback, { capture: true });
 
+box.removeEventListener('mouseover ', callback, { capture: false });
+container.removeEventListener('mouseover ', callback, { capture: false });
 
-// box.addEventListener('mouseenter',callback, {capture:true})
-// container.addEventListener('mouseleave', callback, {capture:true})
+const color = randomColor();
+function callback(e) {
+  let target = e.target;
+  let targetCurrent = e.targetCurrent;
 
-// box.removeEventListener('mouseover ',callback, {capture:false})
-// container.removeEventListener('mouseover ', callback, {capture:false})
+  setTimeout(function () {
+    Array.from(target.children).forEach(item => {
+      item.style.backgroundColor = randomColor();
+    });
+  }, 200);
 
-
-// const color = randomColor()
-// function callback(e){
-
-//  let target =e.target
-//  let targetCurrent = e.targetCurrent
-
-//  setTimeout(function(){
-//   Array.from(target.children).forEach((item)=>{
-//     item.style.backgroundColor = randomColor()
-//   })
-//  }, 200)
-
-//  setTimeout(function(){
-//   Array.from(target.children).forEach((item)=>{
-//     item.style.backgroundColor = ''
-//   }, 400)
-// })
-// }
-
-
-
+  setTimeout(function () {
+    Array.from(target.children).forEach(item => {
+      item.style.backgroundColor = '';
+    }, 400);
+  });
+}
 
 // function setRandomColor(el) {
 //   const colors = ['red', 'blue', 'olive', 'orange', 'pink', 'yellow', 'green', 'gray', 'aqua', 'brown'];
@@ -82,8 +85,6 @@
 // document.querySelectorAll('.box').forEach(box => box.addEventListener('mouseenter', onBoxHover));
 // document.querySelectorAll('.box').forEach(box => box.addEventListener('mouseleave', onMouseLeave));
 
-
-
 // const colors = ['red', 'blue', 'olive', 'orange', 'pink', 'yellow', 'green', 'gray', 'aqua', 'brown'];
 // const boxes = document.querySelectorAll('.box');
 
@@ -107,34 +108,33 @@
 //   });
 // });
 
-const colors = ['blueviolet', 'navy', 'cornflowerblue', 'blue', 'fuchsia', 'deepskyblue', '	dodgerblue', 'skyblue', 'aqua', '	lightskyblue','deeppink', 'greenyellow', 'lime', 'springgreen'  ]
+// const colors = ['blueviolet', 'navy', 'cornflowerblue', 'blue', 'fuchsia', 'deepskyblue', '	dodgerblue', 'skyblue', 'aqua', '	lightskyblue','deeppink', 'greenyellow', 'lime', 'springgreen'  ]
 
-const boxes = document.querySelectorAll('.box')
-const container = document.querySelector('.container')
+// const boxes = document.querySelectorAll('.box')
+// const container = document.querySelector('.container')
 
-function getRandomColor(el, delay){
-  setTimeout(()=>{
-    const randomColor = colors[Math.floor(Math.random()*colors.length)]
-    el.style.backgroundColor = randomColor
-  }, delay)
-}
+// function getRandomColor(el, delay){
+//   setTimeout(()=>{
+//     const randomColor = colors[Math.floor(Math.random()*colors.length)]
+//     el.style.backgroundColor = randomColor
+//   }, delay)
+// }
 
-boxes.forEach((box, index)=>{
-  box.addEventListener('mouseenter', ()=>{
-    for (let i = index; i < boxes.length; i++) {
-      const delay = 200 *(i-index)
-      getRandomColor(boxes[i], delay)
-    }
-   
-  })
+// boxes.forEach((box, index)=>{
+//   box.addEventListener('mouseenter', ()=>{
+//     for (let i = index; i < boxes.length; i++) {
+//       const delay = 200 *(i-index)
+//       getRandomColor(boxes[i], delay)
+//     }
 
-  box.addEventListener('mouseleave', ()=>{
-    box.style.backgroundColor = ''
-  })
-})
+//   })
 
+//   box.addEventListener('mouseleave', ()=>{
+//     box.style.backgroundColor = ''
+//   })
+// })
 
-// 
+//
 // function setRandomColor(el) {
 //       const colors = ['red', 'blue', 'olive', 'orange', 'pink', 'yellow', 'green', 'gray', 'aqua', 'brown'];
 //       // Выбираем произвольный цвет из массива
