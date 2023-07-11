@@ -18,3 +18,4 @@ promise
 
 console.log(promise);
 promise.then(z=>console.log(z))
+
