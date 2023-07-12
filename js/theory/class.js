@@ -1,4 +1,4 @@
-// ==============Classes
+// ==============Classes//prototype
 
 function Product(brand, price, discount){
 // create new object
@@ -7,13 +7,18 @@ function Product(brand, price, discount){
 this.brand = brand
 this.price = price
 this.discount = discount
- this.getPriceWithDiscount= function(){
-  return (this.price*(100-this.discount))/100
- }
 }
 
-const apple = new Product('Apple', 12500, 15)
-const sumsung = new Product('Sumsung', 8500, 15)
+Product.prototype.getPriceWithDiscount =  function(){
+  return (this.price*(100-this.discount))/100
+ }
+
+ Product.prototype.setPrice =  function(newPrice){
+ this.price = newPrice
+ }
+
+const apple = new Product('Apple', 12500, 15)    
+const samsung = new Product('Samsung', 8500, 15)
 
 console.log(apple.getPriceWithDiscount())
-console.log(sumsung)
+console.log(samsung)
