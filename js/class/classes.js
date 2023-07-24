@@ -21,3 +21,14 @@ const u1 = new User('Luter');
 u1.name;  // "User name is Luter"
 u1.name = 'Kolya';
 u1.name; // "User name is Kolya"
+
+const key = 'alert';
+
+class Print {
+  ['show']() { console.log('Test me'); }
+  [key]() { alert('It works!'); }
+}
+
+const p1 = new Print();
+p1.show(); // Test me
+p1.alert(); //  It works!
