@@ -51,16 +51,29 @@ User.prototype.sayHell = function () {
   return `Hello ${this.firstName}`;
 };
 
-const user = new User('Julia', 'Kap')
+const user = new User('Julia', 'Kap');
 //Customer
 function Customer(firstName, lastName, membership) {
   User.call(this, firstName, lastName);
-  this.membership = membership
+  this.membership = membership;
 }
-Customer.prototype = Object.create(User.prototype)
-Customer.prototype.constructor = Customer
+Customer.prototype = Object.create(User.prototype);
+Customer.prototype.constructor = Customer;
 
-Customer.prototype.getMembership = function(){
-  return this.membership.toUpperCase()
+Customer.prototype.getMembership = function () {
+  return this.membership.toUpperCase();
+};
+const customer = new Customer('Taras', 'Kap', 'basic');
+
+//ES6
+
+class ProductES {
+  constructor(brand, price, discount) {
+    this.brand = brand;
+    this.price = price;
+    this.discount = discount;
+  }
 }
-const customer = new Customer("Taras", "Kap", "basic")
+
+
+const newProduct = new ProductES("apple", 200,30)
