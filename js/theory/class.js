@@ -73,6 +73,14 @@ class ProductES {
     this.price = price;
     this.discount = discount;
   }
+
+  getPriceWithDiscount() {
+    return (thes.price*(100-this.discount))/100
+  }
+
+  setPrice(newPrice) {
+  this.price = newPrice
+}
 }
 
 
