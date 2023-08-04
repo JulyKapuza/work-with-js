@@ -66,22 +66,29 @@ Customer.prototype.getMembership = function () {
 const customer = new Customer('Taras', 'Kap', 'basic');
 
 //ES6
-
+const methodName = 'setPrice';
 class ProductES {
   constructor(brand, price, discount) {
     this.brand = brand;
     this.price = price;
     this.discount = discount;
   }
-
+  get brand() {
+    return this._brand;
+  }
+  set brand(name) {
+    this._brand = name;
+  }
   getPriceWithDiscount() {
-    return (thes.price*(100-this.discount))/100
+    return (this.price * (100 - this.discount)) / 100;
   }
 
-  setPrice(newPrice) {
-  this.price = newPrice
-}
+  [methodName](newPrice) {
+    this.price = newPrice;
+  }
 }
 
-
-const newProduct = new ProductES("apple", 200,30)
+const newProduct = new ProductES('apple', 200, 30);
+newProduct.getPriceWithDiscount();
+newProduct.setPrice(350);
+Da;
