@@ -91,4 +91,28 @@ class ProductES {
 const newProduct = new ProductES('apple', 200, 30);
 newProduct.getPriceWithDiscount();
 newProduct.setPrice(350);
-Da;
+
+
+class UserES{
+  constructor(firstName, lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  getFullName(){
+    return `${this.firstName} ${this.lastName} `
+}}
+
+class CustomerES extends UserES{
+  constructor(firstName, lastName, membership){
+super(firstName, lastName);
+this.membership = membership
+  }
+  getFullName(){
+    const parentRes = super.getFullName()
+    return `${parentRes}, membership: ${this.membership} `
+  }
+}
+
+const customerEs = new CustomerES('Jul', 'Kap', 'basic')
+console.log(customerEs)
