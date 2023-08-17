@@ -1,6 +1,6 @@
 // && перше хибне  значення false = false, '', null, undefined,0
 
-let b= 10
+let b = 10
 
 b && console.log('Виконано!!!')  // Виконано
 
@@ -10,11 +10,11 @@ c && console.log('Виконано!!!') //undefined
 
 // Параметри за замовчуванням
 
-function multByFactor(value, multiplier = 1){
-    return value *multiplier
+function multByFactor(value, multiplier = 1) {
+    return value * multiplier
 }
 
-console.log(multByFactor(10,5))
+console.log(multByFactor(10, 5))
 console.log(multByFactor(5))
 
 
@@ -24,7 +24,7 @@ const newPost = (post, addedAt = Date()) => ({
 }) // неявне повернення об'єкта
 
 const firstPost = {
-    id:1,
+    id: 1,
     author: 'Julia',
 }
 
@@ -33,23 +33,23 @@ console.dir(newPost(firstPost))
 
 
 const newPost2 = (post, addedAt = Date()) => {
-    return{
+    return {
         ...post,
         addedAt,
     }
-    
+
 } //явне повернення об'єкта
 
 const secondPost = {
-    id:2,
+    id: 2,
     author: 'Ben',
 }
 
-newPost(secondPost) 
+newPost(secondPost)
 console.dir(newPost(secondPost))
 
 
-(function(i){ console.log(i)})(25)
+    (function (i) { console.log(i) })(25)
 
 
 console.log(window.i)
@@ -59,4 +59,4 @@ const extendedNames = names.join('-Viktor-').split('-');
 
 console.log(extendedNames.lastIndexOf('Viktor'));
 
- console.log(parseInt("08") )
+console.log(parseInt("08"))

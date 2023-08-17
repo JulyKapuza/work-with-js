@@ -19,7 +19,7 @@ console.log(removedEl); //4
 myArray.unshift(true);
 console.log(myArray); //[true,1,2,3]
 
-// shift видаляє елемнт з початку масива
+// shift видаляє елемeнт з початку масива
 
 const deletedEl = myArray.shift(); //повертає видалений елемент
 console.log(myArray); //[1,2,3]

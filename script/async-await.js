@@ -39,11 +39,8 @@ const getData = async url => {
   const json = await res.json();
   return json;
 };
-  
 
 const url = 'https://jsonplaceholder.typicode.com/todos/5'
-
-
 
 getData('https://jsonplaceholder.typicode.com/todos/5')
   .then(data => console.log(data))
