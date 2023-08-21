@@ -12,7 +12,7 @@
 // function User(name) {
 //   let userName = name
 //   return {
-//     getName() {
+//   +
 //       return userName
 //     },
 //     setName(newName) {
@@ -24,15 +24,16 @@
 // const jul = new User('Jul')
 
 function User(name) {
-  let userName = name
-  return  Object.freeze({
+ const symbol = Symbol()
+  return  {
+    [symbol]:name,
     getName() {
-      return userName
+      return this[symbol]
     },
-    setName(newName) {
-      userName = newName
+    setName(name) {
+      this[symbol] = name
     }
-  })
+  }
 }
 
 const jul = new User('Jul')
